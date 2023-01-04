@@ -1,0 +1,27 @@
+1. npm install 이라는 명령어를 통해 'lodash'와 'parcel'패키지를 설치하였다.
+그 중에 parcel은 단지 배포용으로 사용하기 때문에 npm install -D parcel을 통해 배포용으로만 설치하였다.
+
+2. package.json 파일에 "scripts" 부분에 실행할 패키지를 미리 작성하여 놓고
+npm run dev(실행변수)를 터미널에 입력하면 자동으로 parcel ./index.html이 실행되는 것이다.
+(npm run 중단 ctrl+c)
+
+3. 브라우저에는 html,css,js파일만이 동작한다 그러므로 typescript파일 같은 것들은
+'dist'파일에서 변환이 되어 실제 브라우저에서 동작하는 html과 js파일들로 구성된다.
+
+4. "build"는 parcel build 실행문으로 최종제품으로 만들어 최종 제품을 올리는 역할이다
+
+5. 'dist'파일이나 'node-modules'같은 파일들은 지속적으로 변경되거나 용량이 큰 파일들이기 때문에
+.gitignore 파일에 작성하여 git에 올리지 않는 것으로 한다.
+
+6. 유의적 버전(sementic version) - 4.17.21(major.minor.patch) 버전으로 명시하는 버전으로
+major - 기존 버전과 호환되지 않는 새로운 버전
+minor - 기존 버전과 호환되는 기능이 추가된 버전
+patch -  기존 버전과 호환되는 버그 및 오타 등이 수정된 버전
+
+'^' 기호는 major 버전 안에서 가장 최신 버전으로 업데이트 가능 이라는 뜻
+'~' 기호는 minor 버전 안에서 가장 최신 버전으로 업데이트 가능(패치만 변경)
+
+ex) lodash 버전이 ^4.17.19 로 작성되어 있다면 npm update lodash 로 가장 최신 버전의
+버전(major 버전 4는 바뀌지 않는 선에서) 업데이트 할 수 있다는 상황인 것이다.
+
+*예전 버전 설치하기 npm install lodash@4.17.19(원하는 버전)
